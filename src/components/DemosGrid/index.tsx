@@ -1,8 +1,8 @@
 import React from "react";
-import styles from "./DemosGrid.module.css";
+// import styles from "./DemosGrid.module.css";
 
 const DemosGrid = () => {
-  return <div className={styles.grid}></div>;
+  return <div className=""></div>;
 };
 
 export default DemosGrid;

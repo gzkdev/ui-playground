@@ -1,12 +1,11 @@
 import React from "react";
-import styles from "./PageLayout.module.css";
 import DemosGrid from "../DemosGrid";
 
 const PageLayout = () => {
   return (
-    <main className={styles.main}>
-      <div className={styles.container}>
-        <h1 className={styles.heading}>React Playground</h1>
+    <main>
+      <div className="max-w-7xl mx-auto py-10 px-5">
+        <h1 className="pt-5 pb-10 text-5xl font-black">React Playground</h1>
         <DemosGrid />
       </div>
     </main>
