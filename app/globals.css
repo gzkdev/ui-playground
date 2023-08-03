@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* FONT SCALE */
+  --text-sm: clamp(0.80rem, calc(0.79rem + 0.05vw), 0.83rem);
+  --text-base: clamp(1.00rem, calc(0.93rem + 0.37vw), 1.25rem);
+  --text-lg: clamp(1.25rem, calc(1.06rem + 0.93vw), 1.88rem);
+  --text-xl: clamp(1.56rem, calc(1.19rem + 1.85vw), 2.81rem);
+  --text-2xl: clamp(1.95rem, calc(1.28rem + 3.36vw), 4.22rem);
+  --text-3xl: clamp(2.44rem, calc(1.29rem + 5.76vw), 6.33rem);
+  --text-4xl: clamp(3.05rem, calc(1.14rem + 9.54vw), 9.49rem);
+}
+
+body{
+  @apply bg-slate-900 text-slate-400 text-base;
+}
+
+input{
+  @apply text-base;
+}
