@@ -16,6 +16,10 @@ module.exports = {
         "3xl": ["var(--text-3xl)", 1.125],
         "4xl": ["var(--text-4xl)", 1.125],
       },
+      maxWidth: {
+        ctn: "1200px",
+        full: "1400px",
+      },
     },
   },
   plugins: [],

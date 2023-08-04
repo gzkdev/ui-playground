@@ -1,11 +1,14 @@
-
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between py-24 px-4">
-      <div className='max-w-[1200px] mx-auto'>
-      <h1 className='text-3xl font-bold break-words'>Hi, I'm Ezihe Godswill. A Software Engineer Focused on Building Excellent User Experiences</h1>
-      <div className='text-300 max-w-[700px]'>I'm a Software Engineer focused on building excellent web and mobile user experiences</div>
+    <main className="grid lg:grid-cols-2">
+      <div className="top-0 w-full lg:sticky lg:h-[100vh]">
+        <div className="h-full w-full max-w-[480px] px-5 py-10">
+          <div className="mx-2 h-full border text-xl font-bold text-gray-200">
+            Godswill Ezihe
+          </div>
+        </div>
       </div>
+      <div className="h-[200vh] w-full"></div>
     </main>
-  )
+  );
 }
