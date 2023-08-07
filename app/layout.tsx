@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 
 const Switzer = localFont({
-  src: "../assets/fonts/Switzer-Variable.ttf",
+  src: "../assets/fonts/Nippo-Variable.ttf",
   display: "swap",
 });
 
