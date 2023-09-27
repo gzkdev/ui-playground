@@ -1,15 +1,9 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import localFont from "next/font/local";
-
-const Switzer = localFont({
-  src: "../assets/fonts/Nippo-Variable.ttf",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
-  title: "Godswill Ezihe | Personal Portfolio",
-  description: "Godswill Ezihe's Portfolio Website",
+  title: "React Code Playground",
+  description: "Personal repository for prototyping react animations",
 };
 
 export default function RootLayout({
@@ -18,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={Switzer.className}>
+    <html lang="en">
       <body>{children}</body>
     </html>
   );
