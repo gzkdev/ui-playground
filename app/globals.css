@@ -15,6 +15,6 @@
   }
 
   body {
-    @apply text-base text-slate-800;
+    @apply min-h-screen text-base text-slate-800;
   }
 }
