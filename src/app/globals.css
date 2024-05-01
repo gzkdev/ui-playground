@@ -7,4 +7,10 @@
     color: theme("colors.zinc.400");
     background: theme("colors.zinc.900");
   }
+
+  h1,
+  h2,
+  h3 {
+    color: theme("colors.zinc.50");
+  }
 }
