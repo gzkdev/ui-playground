@@ -6,7 +6,7 @@ export function PrototypeHeader({ title }: { title: string }) {
     <div className="flex flex-col gap-10">
       <Link
         href="/"
-        className="p-2 rounded-lg -m-2 bg-zinc-800 self-start hover:opacity-50 transition hover:text-zinc-100"
+        className="p-2 rounded-lg -m-2 bg-zinc-300 self-start hover:opacity-50 transition hover:text-zinc-800"
       >
         <span className="sr-only">Home</span>
         <ArrowElbowUpLeft />

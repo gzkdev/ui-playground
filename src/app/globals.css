@@ -4,13 +4,14 @@
 
 @layer base {
   body {
-    color: theme("colors.zinc.400");
-    background: theme("colors.zinc.900");
+    color: theme("colors.zinc.500");
+    background: theme("colors.zinc.200");
   }
 
   h1,
   h2,
   h3 {
-    color: theme("colors.zinc.50");
+    color: theme("colors.zinc.800");
+    font-weight: 600;
   }
 }

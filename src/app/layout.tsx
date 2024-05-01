@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Nunito_Sans } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const nunitoSans = Nunito_Sans({ subsets: ["latin"] });
+const nunito = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "UI Playground",
@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={nunitoSans.className}>{children}</body>
+      <body className={nunito.className}>{children}</body>
     </html>
   );
 }
