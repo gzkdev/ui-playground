@@ -87,10 +87,9 @@ function AnimatedSelectTokenTray() {
               className="px-5 py-2"
             >
               {tokens.map(({ id, name, symbol, price, priceDelta, logo }) => (
-                <AnimatePresence>
+                <AnimatePresence key={id}>
                   <motion.li
                     variants={animateItem}
-                    key={id}
                     layout
                     className="flex items-center gap-2 p-3 -mx-3 -mt-2 hover:bg-zinc-100 transition rounded-3xl cursor-pointer"
                   >
