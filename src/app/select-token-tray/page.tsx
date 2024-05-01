@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-// import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Clock, MagnifyingGlass, Plus, X } from "@phosphor-icons/react";
 import { PrototypeHeader } from "@/components/prototype-header";
 
@@ -24,23 +24,31 @@ function AnimatedSelectTokenTray() {
 
   return (
     <div className="fixed flex items-center justify-center bottom-10 w-[90%] max-w-sm left-1/2 -translate-x-1/2">
-      <div className="bg-zinc-50 w-full z-50" style={{ borderRadius: "32px" }}>
-        <div
+      <motion.div
+        layout
+        className="bg-zinc-50 w-full z-50"
+        style={{ borderRadius: "32px" }}
+      >
+        <motion.div
+          layout
           className="flex gap-2"
           style={{ padding: isExpanded ? "16px" : "8px" }}
         >
           {isExpanded || (
-            <div className="flex-grow max-w-max">
+            <motion.div layout className="flex-grow max-w-max">
               <button
                 onClick={() => setIsExpanded((x) => !x)}
                 className="size-9 bg-zinc-200 rounded-full inline-flex items-center justify-center"
               >
                 <Clock weight="bold" />
               </button>
-            </div>
+            </motion.div>
           )}
 
-          <div className="relative flex-grow rounded-full bg-zinc-200 flex items-center">
+          <motion.div
+            layout
+            className="relative flex-grow rounded-full bg-zinc-200 flex items-center"
+          >
             <MagnifyingGlass weight="bold" className="absolute left-3" />
             <input
               type="text"
@@ -48,9 +56,9 @@ function AnimatedSelectTokenTray() {
               placeholder="Search for tokens"
               className="bg-transparent w-full h-full pl-9 outline-none placeholder:text-zinc-400"
             />
-          </div>
+          </motion.div>
 
-          <div className="flex-grow max-w-max">
+          <motion.div layout className="flex-grow max-w-max">
             {isExpanded ? (
               <button
                 onClick={() => setIsExpanded((x) => !x)}
@@ -67,34 +75,68 @@ function AnimatedSelectTokenTray() {
                 <Plus weight="bold" />
               </button>
             )}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
         {isExpanded && (
-          <ul className="px-5 py-2">
-            {tokens.map(({ id, name, symbol, price, priceDelta, logo }) => (
-              <li
-                key={id}
-                className="flex items-center gap-2 p-3 -mx-3 -mt-2 hover:bg-zinc-100 transition rounded-3xl cursor-pointer"
-              >
-                <div className="size-10 rounded-full">{logo}</div>
-                <div className="flex flex-col flex-grow">
-                  <span className="text-zinc-800 font-medium">{name}</span>
-                  <span className="text-sm">{symbol}</span>
-                </div>
-                <div className="flex flex-col text-end">
-                  <span className="text-zinc-800 font-medium">{price}</span>
-                  <span className="text-sm text-green-500 font-medium">
-                    {priceDelta}
-                  </span>
-                </div>
-              </li>
-            ))}
-          </ul>
+          <AnimatePresence>
+            <motion.ul
+              layout
+              variants={animateList}
+              initial="initial"
+              animate="animate"
+              className="px-5 py-2"
+            >
+              {tokens.map(({ id, name, symbol, price, priceDelta, logo }) => (
+                <AnimatePresence>
+                  <motion.li
+                    variants={animateItem}
+                    key={id}
+                    layout
+                    className="flex items-center gap-2 p-3 -mx-3 -mt-2 hover:bg-zinc-100 transition rounded-3xl cursor-pointer"
+                  >
+                    <div className="size-10 rounded-full">{logo}</div>
+                    <div className="flex flex-col flex-grow">
+                      <span className="text-zinc-800 font-medium">{name}</span>
+                      <span className="text-sm">{symbol}</span>
+                    </div>
+                    <div className="flex flex-col text-end">
+                      <span className="text-zinc-800 font-medium">{price}</span>
+                      <span className="text-sm text-green-500 font-medium">
+                        {priceDelta}
+                      </span>
+                    </div>
+                  </motion.li>
+                </AnimatePresence>
+              ))}
+            </motion.ul>
+          </AnimatePresence>
         )}
-      </div>
+      </motion.div>
     </div>
   );
 }
+
+const animateList = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.4,
+      when: "beforeChildren",
+      ease: [0.17, 0.67, 0.83, 0.67],
+    },
+  },
+};
+
+const animateItem = {
+  animate: { opacity: 1, y: "0px" },
+  initial: {
+    opacity: 0,
+    y: "-40px",
+  },
+};
 
 const tokens = [
   {
