@@ -14,10 +14,10 @@ export default function Home() {
         <ul>
           <li>
             <Link
-              href="/"
+              href="/select-token-tray"
               className="flex p-3 -m-3 transition rounded-lg hover:bg-zinc-800 hover:text-white"
             >
-              Collapsible tray
+              Select token tray
             </Link>
           </li>
         </ul>
