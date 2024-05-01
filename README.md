@@ -11,4 +11,4 @@ A personal repository for user interface prototypes
 
 ## Preview
 
-See live preview of this app [here](https://vercel.com/)
+See live preview of this app [here](https://ui-playground-six.vercel.app/)
