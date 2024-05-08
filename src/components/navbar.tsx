@@ -9,6 +9,14 @@ export function Navbar() {
           <Link href="/" className="font-semibold">
             ui playground
           </Link>
+
+          <ul>
+            <li>
+              <Link href="/">About</Link>
+              <Link href="/">Components</Link>
+              <Link href="/">Github</Link>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
