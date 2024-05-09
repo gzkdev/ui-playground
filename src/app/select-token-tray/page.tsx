@@ -3,23 +3,8 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Clock, MagnifyingGlass, Plus, X } from "@phosphor-icons/react";
-import { PrototypeHeader } from "@/components/prototype-header";
 
 export default function Home() {
-  return (
-    <div className="bg-zinc-200 text-zinc-700 min-h-screen">
-      <div className="max-w-screen-md p-6 mx-auto space-y-40">
-        <div className="my-10 space-y-2">
-          <PrototypeHeader title="Select token tray" />
-
-          <AnimatedSelectTokenTray />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function AnimatedSelectTokenTray() {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
